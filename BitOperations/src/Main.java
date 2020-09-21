@@ -1,5 +1,5 @@
 /**
- * Tests of Bit operations
+ * Flips one bit of the given <code>value</code>.
  * @author Tikhonov Eugene
  * @version 1.0
  * 09.09.2020
@@ -11,13 +11,13 @@ public class Main {
          * Bit invertion operation
          */
 
-        int a = 0x0F, //исходное число
-                b = 4, //номер бита для инвертироавния
+        int a = -1, //исходное число
+                b = 1, //номер бита для инвертироавния
                 result = 0; //результат
 
-        //находим знач. нужного бита и ставим его в условие if
-        if ( (a & (1<<b)) != 0 ) result = a & ~(1<<b); //меняем бит на 0
-        else result = a | (1<<b); //меняем на еденицу
+        //сдвигаем 1 влево на число бит, равное b
+        // применяем операцию XOR
+        result = a ^ (1 << b);
 
         System.out.println(Integer.toBinaryString(a));
         System.out.println(Integer.toBinaryString(result));

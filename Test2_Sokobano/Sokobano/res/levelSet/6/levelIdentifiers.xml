@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<levels>
+<identifier id="1" name="awakening" uri=""/>
+<identifier id="2" name="too many" uri=""/>
+<identifier id="3" name="jammed" uri=""/>
+<identifier id="4" name="crossroads" uri=""/>
+<identifier id="5" name="chaos room" uri=""/>
+<identifier id="6" name="two twos" uri=""/>
+<identifier id="7" name="boring box" uri=""/>
+<identifier id="8" name="put straight" uri=""/>
+<identifier id="9" name="tidy up" uri=""/>
+<identifier id="10" name="push'n'pull" uri=""/>
+<identifier id="11" name="anarchy" uri=""/>
+<identifier id="12" name="dirty job" uri=""/>
+<identifier id="13" name="barrier" uri=""/>
+<identifier id="14" name="fat dinner" uri=""/>
+<identifier id="15" name="nightmare" uri=""/>
+<identifier id="16" name="sunset" uri=""/>
+</levels>

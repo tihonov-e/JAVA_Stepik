@@ -19,9 +19,18 @@ public class AsciiCharSequence implements  java.lang.CharSequence{
         return (char) charSequence[index];
     }
 
-    //реализовать
     @Override
     public CharSequence subSequence(int start, int end) {
-         return null;
+        int length = end - start;
+        byte[] bytes = new byte[length];
+        for (int i = 0; i < length; i++) {
+            bytes[i] = charSequence[start + i];
+        }
+        return new AsciiCharSequence (bytes);
+    }
+
+    @Override
+    public String toString() {
+        return new String(charSequence);
     }
 }

@@ -7,7 +7,7 @@ class TooLongTextAnalyzer implements TextAnalyzer{
     private int maxLength = 0;
 
     //constructor
-    TooLongTextAnalyzer (int maxLength) {
+    public TooLongTextAnalyzer (int maxLength) {
         this.maxLength = maxLength;
     }
 

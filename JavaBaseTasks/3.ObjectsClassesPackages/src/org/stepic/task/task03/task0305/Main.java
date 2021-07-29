@@ -1,6 +1,19 @@
 package org.stepic.task.task03.task0305;
 
 public class Main {
+
+    public Label checkLabels(TextAnalyzer[] analyzers, String text) {
+
+        if (analyzers[0].processText(text) != Label.OK)
+            return analyzers[0].processText(text);
+        if (analyzers[1].processText(text) != Label.OK)
+            return analyzers[1].processText(text);
+        if (analyzers[2].processText(text) != Label.OK)
+            return analyzers[2].processText(text);
+
+        return Label.OK;
+    }
+
     // тесты
     public static void main(String[] args) {
         // инициализация анализаторов для проверки в порядке данного набора анализаторов

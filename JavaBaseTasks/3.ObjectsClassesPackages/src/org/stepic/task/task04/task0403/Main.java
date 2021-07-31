@@ -4,24 +4,14 @@ public class Main {
  //stacktrace
 
     public static void main(String[] args) {
-/*      тесты
-        System.out.println(getCallerClassAndMethodName());
-        m1();    }
-
-    static void m1() {
-        System.out.println(getCallerClassAndMethodName());
-        m2();    }
-
-    static void m2() {
-        System.out.println(getCallerClassAndMethodName());
-        m3();    }
-
-    static void m3() {
-        System.out.println(getCallerClassAndMethodName());    }
-*/
-
+        //тесты
         System.out.println(getCallerClassAndMethodName());
         anotherMethod();
+/*
+        out:
+        null
+        org.stepic.java.example.Test#main
+*/
     }
 
     private static void anotherMethod() {
@@ -32,13 +22,12 @@ public class Main {
 
         public static String getCallerClassAndMethodName() {
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
-        String message = "";
-        if (stackTraceElements.length == 3)
+        if (stackTraceElements.length < 4)
             return null;
         else {
-            StackTraceElement element = stackTraceElements[2];
+            StackTraceElement element = stackTraceElements[3];
             String className = element.getClassName();
-            String methodName = stackTraceElements[stackTraceElements.length - 1].getMethodName();
+            String methodName = element.getMethodName();
             return className + "#" + methodName;
 
         }

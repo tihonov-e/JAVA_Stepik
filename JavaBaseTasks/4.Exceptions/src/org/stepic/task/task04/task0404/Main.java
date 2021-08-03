@@ -46,13 +46,67 @@ public class Main {
     //метод который мы создаем для управления роботом (то что нужно для решения задачи)
     public static void moveRobot(RobotConnectionManager robotConnectionManager, int toX, int toY) {
         //Тут вставляем свой код
-        try {
-            robotConnectionManager.getConnection();
-        }
-        catch (RobotConnectionException e){
-            System.out.println("Connection failed");
-        }
+        for (int i = 0; i < 3; i++) {
 
+            //устанавливаем соединение
+            try (RobotConnection robotConnection = robotConnectionManager.getConnection();) {
+                robotConnection.moveRobotTo(toX, toY); //команда на перемещение
+                i = 3;
+            }
+            catch (RobotConnectionException e) {
+                if (i == 2) throw e;
+            }
+            catch (Throwable e) {
+                i = 3;
+                throw e;
+            }
+        }
     }
+
+
 }
 
+
+    /*После запуска в консоли должно быть следующее:
+
+        repeat number: 0
+        Exeption List: RCM: OK||RC: OK||Close: OK||
+        attempt number: 1. start RCM
+        RCM OK
+        attempt number: 1. start RC
+        Move robot OK
+        attempt number: 1. start close
+        Close OK
+
+        repeat number: 1
+        Exeption List: RCM: OK||RC: OK||Close: RobotConnectionException||
+        attempt number: 1. start RCM
+        RCM OK
+        attempt number: 1. start RC
+        Move robot OK
+        attempt number: 1. start close
+        Close Exeption
+
+        repeat number: 2
+        Exeption List: RCM: OK||RC: OK||Close: MyException||
+        attempt number: 1. start RCM
+        RCM OK
+        attempt number: 1. start RC
+        Move robot OK
+        attempt number: 1. start close
+        Close Exeption
+
+        repeat number: 3
+        Exeption List: RCM: OK||RC: RobotConnectionException||Close: OK||
+        attempt number: 1. start RCM
+        RCM OK
+        attempt number: 1. start RC
+        RC Exeption
+        attempt number: 1. start close
+        Close OK
+        attempt number: 2. start RCM
+        RCM OK
+        attempt number: 2. start RC
+        Move robot OK
+        attempt number: 2. start close
+        Close OK*/

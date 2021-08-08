@@ -1,0 +1,10 @@
+авг. 08, 2021 8:10:42 PM org.stepic.task.task04.task0405.Main main
+INFO: Начало main
+авг. 08, 2021 8:10:42 PM org.stepic.task.task04.task0405.Main main
+WARNING: добавляем число 0 в List
+авг. 08, 2021 8:10:42 PM org.stepic.task.task04.task0405.Main main
+WARNING: добавляем число 1  в List
+авг. 08, 2021 8:10:42 PM org.stepic.task.task04.task0405.Main main
+INFO: Выводим в констоль ints
+авг. 08, 2021 8:10:42 PM org.stepic.task.task04.task0405.Main main
+INFO: Размер равен 2
